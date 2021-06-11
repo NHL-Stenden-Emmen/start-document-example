@@ -94,8 +94,6 @@ In the following table you'll find all the data that is needed for testing.
 | `psorder`    | `addProduct(playstation)` |
 | `psorder`    | `addProduct(playstation)` |
 
-
-
 ### Test Cases
 
 In this section the testcases will be described. Every test case should be executed with the test data as starting point.
@@ -120,10 +118,30 @@ Testing the method to get all the customers from a city.
 
 #### #3 Remove Customers With A Smaller Customer ID
 
+Testing that we can remove customers based on the id lower than the given input.
+
 |Step|Input|Action|Expected output|
 |----|-----|------|---------------|
 |1|`mediamarkt`|`removeCustomers(1)`||
 |2| `mediamarkt` |`getCustomers()`|ArrayList with only customer `martijn`|
 
-#### #4 Get Store Profit
+#### #4 Get Order Price
+
+Testing the price method for an order. The `psorder` has a `PremiumCustomer` attached.
+
+| Step | Input        | Action       | Expected output |
+| ---- | ------------ | ------------ | --------------- |
+| 1    | `appleorder` | `getPrice()` | 1400            |
+| 2    | `psorder`    | `getPrice()` | 400             |
+
+#### #5 Get Store Profit
+
+Testing the total store profit.
+
+| Step | Input        | Action                 | Expected output |
+| ---- | ------------ | ---------------------- | --------------- |
+| 1    | `mediamarkt` | `addOrder(appleorder)` |                 |
+| 2    | `mediamarkt` | `getProfit()`          | 1400            |
+| 3    | `mediamarkt` | `addOrder(psorder)`    |                 |
+| 4    | `mediamarkt` | `getProfit()`          | 1900            |
 
